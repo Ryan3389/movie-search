@@ -1,7 +1,8 @@
 const router = require('express').Router()
 
-const { movieSearch } = require('../../controllers/movieControllers')
+const { storeMovieDB, queryDb } = require('../../controllers/movieControllers')
 
-router.route('/').post(movieSearch)
+router.route('/').post(storeMovieDB)
+router.route('/query').post(queryDb)
 
 module.exports = router
