@@ -4,7 +4,7 @@ const OpenAI = require('openai')
 require('dotenv').config()
 
 //OpenAi setup
-export const openai = new OpenAI({
+const openai = new OpenAI({
     apiKey: process.env.OPEN_AI_API_KEY
 })
 
@@ -13,4 +13,6 @@ export const openai = new OpenAI({
 const supabaseUrl = process.env.SUPABASE_PROJECT_URL
 const supabaseApiKey = process.env.SUPABASE_API_KEY
 
-export const supabase = createClient(supabaseUrl, supabaseApiKey)
+const supabase = createClient(supabaseUrl, supabaseApiKey)
+
+module.exports = { supabase, openai }
