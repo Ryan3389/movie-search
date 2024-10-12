@@ -44,10 +44,41 @@ const queryDb = async (req, res) => {
         })
 
         const result = compareSearch.data[0]
-        res.status(200).json(result)
+        const movieRecommendation = await queryResponse(searchTermEmbedding, result)
+        res.status(200).json(movieRecommendation)
+    } catch (error) {
+        console.log(error)
+        res.status(500).json({ message: error })
+    }
+}
+
+const queryResponse = async (search, match) => {
+    try {
+        const messages = [
+            {
+                role: 'system',
+                content: 'You will recieve two pieces of data, one called search, and one called match. Search refers to the users searched movie idea, match refers to the movie recommendation based off of the search, and description refers to the movie description. Use this to make a movie recommendation. Make sure your response includes a general overview of the movie. Do not copy the description, but give a good summary of it. '
+            },
+            {
+                role: 'user',
+                content: `Search: ${search}, match: ${match.title}`
+            }
+        ]
+
+        const response = await openai.chat.completions.create({
+            model: 'gpt-3.5-turbo',
+            messages: messages
+        })
+
+        const responseMessage = response.choices[0].message.content
+
+        return responseMessage
+
     } catch (error) {
         console.log(error)
     }
 }
+
+
 
 module.exports = { storeMovieDB, queryDb }
