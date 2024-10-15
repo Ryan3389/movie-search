@@ -1,7 +1,11 @@
 import MovieSearchPage from "./pages/movieSearchPage"
+import Navbar from "./components/Navbar"
 const App = () => {
   return (
-    <MovieSearchPage />
+    <>
+      <Navbar />
+      <MovieSearchPage />
+    </>
   )
 }
 

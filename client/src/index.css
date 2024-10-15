@@ -2,14 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --background-color: #222222;
+  --input-color: #dddddd;
+  --heading-color: #FDFFFE;
+  --btn-color: #A5C9FF;
+  --text-color: #BCC6C7;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  height: 10vh;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 15px 0;
+  font-size: 1.2rem;
+}
+
 .form-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  width: 80%;
+  width: 50%;
   margin: auto;
   flex-direction: column;
+}
+
+.form-section h1,
+p {
+  color: var(--heading-color);
 }
 
 .form {
@@ -19,15 +48,29 @@
   align-items: center
 }
 
+.form label {
+  color: var(--text-color);
+}
+
+.form textarea {
+  background-color: var(--input-color);
+  color: var(--background-color);
+  width: 100%;
+}
+
+.form input {
+  background-color: var(--btn-color);
+}
+
 .input-div {
-  width: 50%;
+  width: 100%;
 }
 
 .textarea {
   width: 100%;
   max-width: 100%;
   border: 1px solid;
-  padding: 2px 4px;
+  padding: 4px 8px;
   border-radius: 4px;
   margin: 5px 0;
   resize: none;
@@ -39,4 +82,28 @@
   padding: 8px 20px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  width: 80%;
+  margin: auto;
+}
+
+.ai-response {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--text-color);
+  width: 40%;
+  min-height: 45vh;
+  background-color: #cccccc10;
+  border-radius: 10px;
+}
+
+.ai-response .ai-text {
+  color: var(--text-color);
 }
