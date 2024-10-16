@@ -1,5 +1,5 @@
 import { useState } from "react"
-import MovieFormComponent from "../components/movieFormComponent"
+import MovieFormComponent from '../components/MovieFormComponent'
 const MovieSearchPage = () => {
     const [formState, setFormState] = useState({
         movieGenre: "",
@@ -12,7 +12,6 @@ const MovieSearchPage = () => {
     const inputFields = [
 
         { name: "movieGenre", type: "text", label: "What do you feel like watching ?", placeholder: "ex: action" },
-        // { name: "movieLength", type: "text", label: "What is your time limit ?", placeholder: "Over or under 2 hours" }
     ]
     const handleChange = (e) => {
         setFormState({

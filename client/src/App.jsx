@@ -1,4 +1,4 @@
-import MovieSearchPage from "./pages/movieSearchPage"
+import MovieSearchPage from './pages/MovieSearchPage'
 import Navbar from "./components/Navbar"
 const App = () => {
   return (
