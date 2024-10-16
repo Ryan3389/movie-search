@@ -102,8 +102,18 @@ p {
   min-height: 45vh;
   background-color: #cccccc10;
   border-radius: 10px;
+  padding: 10px 20px;
+  line-height: 1.7;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .ai-response .ai-text {
   color: var(--text-color);
 }
+
+/* @media screen and (max-width: 768px){
+  .ai-response{
+    
+  }
+} */
