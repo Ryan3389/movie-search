@@ -6,15 +6,15 @@ const app = express()
 
 app.use(express.json())
 app.use(routes)
+// Serve static files from the dist directory
+app.use(express.static(path.join(__dirname, '../dist')));
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, '../client/dist/index.html'));
-    });
-}
+// Handle all other requests by serving index.html
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`)
 })
+
