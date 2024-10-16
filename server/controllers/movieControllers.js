@@ -30,11 +30,10 @@ const queryDb = async (req, res) => {
     try {
         //Step 1 - take search term from client
         const movieGenre = req.body.movieGenre
-        const movieLength = req.body.movieLength
         //Step 2 - convert that search term into an embedding
         const searchEmbedding = await openai.embeddings.create({
             model: "text-embedding-ada-002",
-            input: movieGenre, movieLength
+            input: movieGenre
         })
         const searchTermEmbedding = searchEmbedding.data[0].embedding
         //Step 3 - pass in the embedded search term into the sql compare function
