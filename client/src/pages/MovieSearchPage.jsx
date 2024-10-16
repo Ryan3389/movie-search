@@ -23,7 +23,7 @@ const MovieSearchPage = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         setLoading(true)
-        const url = import.meta.env.MODE === 'production' ? 'https://movie-search-zzyc.onrender.com/api/movie/query' : '/api/movie/query'
+        const url = 'https://movie-search-zzyc.onrender.com/api/movie/query'
         try {
             const response = await fetch(url, {
                 method: "POST",

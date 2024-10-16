@@ -32,7 +32,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'https://movie-search-zzyc.onrender.com/',
+        target: 'http://localhost:3001',
         changeOrigin: true,
         secure: false
       }
