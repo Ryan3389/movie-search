@@ -9,7 +9,7 @@ export default defineConfig({
     open: true,
     proxy: {
       '/api': {
-        target: 'https://movie-search-zzyc.onrender.com/',
+        target: 'https://movie-search-zzyc.onrender.com',
         changeOrigin: true,
         secure: false
       }
